@@ -6,6 +6,8 @@ Based on [Bits and Pieces Theme for Pico](https://github.com/lostkeys/Bits-and-P
 
 It currently relies on the [CurrentLevel](https://github.com/randomchars42/pico-currentlevel)-Plugin to display a breadcrumb-esque directory structure.
 
+Live demo: <blog.pixelwoelkchen.de>
+
 ## Installation
 
 Simply download, unzip and move the plugin folder to your `/plugins/` folder. Now move the downloaded and unzipped (you did not exxpect that, did you? ;) ) folder to `/themes/`.
