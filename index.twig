@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="author" content="{{ meta.author }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex" />
+  {% if meta.description %}
+    <meta name="description" content="{{ meta.description|striptags }}">
+  {% endif %}
+  <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+  <link rel="stylesheet" href="{{ theme_url }}/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="{{ theme_url }}/styles/highlightjs-github.css" type="text/css" />
+</head>
+<body>
+
+<header role="banner">
+</header>
+
+<nav role="navigation">
+	<ul>
+		<li>
+			<a href="{{ base_url }}">Start</a>
+				{% set crumbs = breadcrumbs(current_page.id) %}
+				{% set currentpath = current_page.id|split('/') %}
+				{% for foldername, folder in crumbs %}
+					<ul>
+						<li>
+							<a href="{{ base_url }}?{{ folder }}">{{ foldername }}</a>
+				{% endfor %}
+				<ul>
+				{% for page in pages if page.title %}
+					{% set pagepath = page.id|split('/') %}
+					{% if pagepath|last != 'index' or pagepath|length != currentpath|length %}
+					<li class="{% if page.id == current_page.id %}active{% endif %}">
+						<a href="{{ page.url }}" data-shortcut="{{page.meta.shortcut}}">
+							{{ page.title }}
+							{% if page.meta.shortcut %}
+								<span class="shortcut">{{page.meta.shortcut|replace({'+':' '})}}</a>
+							{% endif %}
+						</a>
+					</li>
+					{% endif %}
+				{% endfor %}
+				</ul>
+				{% for folder in crumbs %}
+						</li>
+					</ul>
+				{% endfor %}
+		</li>
+</nav>
+
+<main role="main">
+  <article>
+    {{ content }}
+  </article>
+</main>
+
+<footer role="content-info">
+</footer>
+
+<script src="{{ theme_url }}/scripts/highlight.js"></script>
+<script src="{{ theme_url }}/scripts/mousetrap.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  document.querySelectorAll('nav[role=navigation] a').forEach(function(el) {
+    if (el.getAttribute('data-shortcut').length > 0) {
+      Mousetrap.bind(el.getAttribute('data-shortcut'), function() {
+        location.assign(el.getAttribute('href'));
+      });       
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,352 @@
+/**
+ * 
+ *
+ * Based on the great Bits & Pieces theme by Fredrik Danielsson, Lost&Keys (http://lostkeys.se)
+ * Licensed under MIT (https://github.com/lostkeys/Bits-and-Pieces-Theme-for-Pico/blob/master/LICENSE)
+ */
+/**
+ *
+ */
+html, body, main,
+hgroup,
+header,
+footer,
+menu,
+nav,
+section,
+article,
+aside, menuitem, datalist, details, summary, figure, figcaption, canvas, map, div,
+object,
+iframe,
+embed, hr, h1, h2, h3, h4, h5, h6, table, tbody,
+tfoot,
+thead,
+colgroup,
+col,
+caption, td,
+th, ul, ol, li, dl, dd, dt, p, blockquote, pre, output, form, fieldset, label, legend, button, input, keygen, select, optgroup, option, address, audio, video, noscript, picture, progress, ruby, span, a, abbr, area, bdi, bdo, cite, data, del, ins, dfn, em, strong, b, u, i, img, q, s, mark, meter, small, sub, sup, time, kbd, samp, var, code, rt,
+rp {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+main,
+hgroup,
+header,
+footer,
+menu,
+nav,
+section,
+article,
+aside, details, figure, figcaption, canvas, map, picture, progress {
+  display: block; }
+
+h2::before, h3::before {
+  font-weight: 400;
+  font-size: 1.25rem;
+  text-align: right;
+  width: 2rem;
+  content: '#';
+  padding-right: .5rem;
+  margin-left: -2rem;
+  color: #C1CACC;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased; }
+
+blockquote, q {
+  quotes: none; }
+  blockquote:before, q:before {
+    content: open-quote; }
+  blockquote:after, q:after {
+    content: close-quote; }
+
+span, a, abbr, area, bdi, bdo, cite, data, del, ins, dfn, em, strong, b, u, i, q, s, mark, meter, small, sub, sup, time, kbd, samp, var, code, rt,
+rp {
+  border-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+  outline-style: none;
+  outline-width: 0;
+  outline-offset: 0;
+  display: inline; }
+  span:focus, a:focus, abbr:focus, area:focus, bdi:focus, bdo:focus, cite:focus, data:focus, del:focus, ins:focus, dfn:focus, em:focus, strong:focus, b:focus, u:focus, i:focus, q:focus, s:focus, mark:focus, meter:focus, small:focus, sub:focus, sup:focus, time:focus, kbd:focus, samp:focus, var:focus, code:focus, rt:focus,
+  rp:focus, span:active, a:active, abbr:active, area:active, bdi:active, bdo:active, cite:active, data:active, del:active, ins:active, dfn:active, em:active, strong:active, b:active, u:active, i:active, q:active, s:active, mark:active, meter:active, small:active, sub:active, sup:active, time:active, kbd:active, samp:active, var:active, code:active, rt:active,
+  rp:active, span:hover, a:hover, abbr:hover, area:hover, bdi:hover, bdo:hover, cite:hover, data:hover, del:hover, ins:hover, dfn:hover, em:hover, strong:hover, b:hover, u:hover, i:hover, q:hover, s:hover, mark:hover, meter:hover, small:hover, sub:hover, sup:hover, time:hover, kbd:hover, samp:hover, var:hover, code:hover, rt:hover,
+  rp:hover {
+    outline-style: none;
+    outline-width: 0;
+    outline-offset: 0; }
+
+code {
+  border-color: #E1E7E8;
+  padding: 0 0.3em; }
+
+kbd, samp, var, code {
+  border-width: 1px;
+  border-color: #E1E7E8;
+  border-radius: 1px;
+  background-color: #FAFAFA;
+  color: #4D5757; }
+
+summary, figure, canvas, map, hr, h1, h2, h3, h4, h5, h6, table, ul, ol, dl, p, blockquote, pre, output, form, fieldset, address, audio, video, ruby {
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+
+pre, output {
+  display: block;
+  font-family: monospace;
+  white-space: pre; }
+
+/**
+ * Mixin for font face by jonathantneal.
+ *
+ * https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
+ */
+/**
+ * Resets the style for all elements to some elegant defaults.
+ *
+ * Based on the great Bits & Pieces theme by Fredrik Danielsson, Lost&Keys (http://lostkeys.se)
+ * Licensed under MIT (https://github.com/lostkeys/Bits-and-Pieces-Theme-for-Pico/blob/master/LICENSE)
+ */
+/**
+ * Block elements
+ */
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box; }
+
+body {
+  background-color: #FFFFFF;
+  color: #4D5757;
+  line-height: 1.375;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+datalist {
+  display: none; }
+
+summary {
+  font-style: italic; }
+
+hr {
+  border-width: 1px;
+  border-style: solid none none;
+  border-color: #E1E7E8; }
+
+h1 {
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  font-weight: normal;
+  font-size: 2.5rem;
+  letter-spacing: -0.025rem; }
+  main h1:first-of-type {
+    margin-top: 0; }
+
+h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-color: #E1E7E8;
+  border-width: 1px;
+  border-style: none none solid none;
+  position: -webkit-sticky;
+  top: 0; }
+
+h3 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold; }
+  h2 + h3 {
+    margin-top: 1.5rem; }
+
+h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0; }
+
+h5 {
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0; }
+
+h6 {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  /* Avoid border-on-border together with bordered H2 */ }
+  h2 + table tr:first-child th, h2 + table tr:first-child td {
+    border-top-width: 0; }
+
+td,
+th {
+  text-align: left;
+  padding: 0.3rem 0;
+  border-style: solid;
+  border-color: #E1E7E8;
+  border-width: 1px 0; }
+
+ul {
+  list-style-type: disc; }
+  ul ul, ul ol {
+    margin-top: 0;
+    margin-bottom: 0; }
+
+ol {
+  list-style-type: decimal; }
+  ol ul, ol ol {
+    margin-top: 0;
+    margin-bottom: 0; }
+
+li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  margin-left: 1.5em; }
+
+blockquote {
+  font-style: italic; }
+
+address {
+  font-style: italic; }
+
+noscript {
+  font-weight: bold; }
+
+/**
+ * Inline elements
+ */
+a {
+  color: #2980B9; }
+  a:link, a:visited {
+    text-decoration: none; }
+  a:hover, a:active, a:focus {
+    text-decoration: underline; }
+
+cite {
+  font-style: italic; }
+
+del {
+  text-decoration: line-through; }
+
+ins {
+  text-decoration: underline; }
+
+dfn {
+  font-style: italic; }
+
+em {
+  font-style: italic; }
+
+strong {
+  font-weight: bold; }
+
+b {
+  font-weight: bold; }
+
+u {
+  text-decoration: line-through; }
+
+i {
+  font-style: italic; }
+
+q {
+  font-style: italic; }
+
+s {
+  text-decoration: line-through; }
+
+mark {
+  background-color: yellow; }
+
+small {
+  font-size: 0.7em; }
+
+sub {
+  position: relative;
+  font-size: 0.5em;
+  line-height: 1;
+  bottom: -0.3em; }
+
+sup {
+  position: relative;
+  font-size: 0.5em;
+  line-height: 1;
+  top: -0.95em; }
+
+time {
+  font-style: italic; }
+
+pre code {
+  display: block;
+  padding: 0.3em 0.3em; }
+
+param {
+  display: none; }
+
+@font-face {
+  font-family: "source-sans-pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/SourceSansPro-Regular.eot?") format("eot"), url("../fonts/SourceSansPro-Regular.woff") format("woff"), url("../fonts/SourceSansPro-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "source-sans-pro";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/SourceSansPro-It.eot?") format("eot"), url("../fonts/SourceSansPro-It.woff") format("woff"), url("../fonts/SourceSansPro-It.ttf") format("truetype"); }
+@font-face {
+  font-family: "source-sans-pro";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/SourceSansPro-Semibold.eot?") format("eot"), url("../fonts/SourceSansPro-Semibold.woff") format("woff"), url("../fonts/SourceSansPro-Semibold.ttf") format("truetype"); }
+@font-face {
+  font-family: "source-sans-pro";
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/SourceSansPro-SemiboldIt.eot?") format("eot"), url("../fonts/SourceSansPro-SemiboldIt.woff") format("woff"), url("../fonts/SourceSansPro-SemiboldIt.ttf") format("truetype"); }
+body {
+  font-family: "source-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 100vh; }
+
+header[role=banner] {
+  height: 3em; }
+
+footer[role=content-info] {
+  height: 3em; }
+
+@media (min-width: 1200px) {
+  main, nav {
+    height: calc(100vh - 3em - 3em);
+    overflow-y: auto; } }
+
+main {
+  padding: 0.3em 0.3em; }
+  @media (min-width: 1200px) {
+    main {
+      margin-left: 20em;
+      padding: 0 2em; }
+      main:after {
+        content: '';
+        display: table; } }
+
+nav {
+  padding: 0.3em 0.3em; }
+  @media (min-width: 1200px) {
+    nav {
+      float: left;
+      width: 20em; } }
+
+/*# sourceMappingURL=main.css.map */

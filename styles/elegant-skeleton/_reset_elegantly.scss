@@ -1,0 +1,593 @@
+/**
+ * Resets the style for all elements to some elegant defaults.
+ *
+ * Based on the great Bits & Pieces theme by Fredrik Danielsson, Lost&Keys (http://lostkeys.se)
+ * Licensed under MIT (https://github.com/lostkeys/Bits-and-Pieces-Theme-for-Pico/blob/master/LICENSE)
+ */
+
+
+/**
+ * Block elements
+ */
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html {
+	@extend %reset;
+	box-sizing: border-box;
+}
+
+body {
+	@extend %reset;
+
+	background-color: $color-bg;
+	color: $color-text;
+	line-height: $size-line;
+	font-size: $size-text;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+main,
+hgroup,
+header,
+footer,
+menu,
+nav,
+section,
+article,
+aside {
+	@extend %html5;
+	@extend %reset;
+}
+
+menuitem {
+	// for context-menus
+	@extend %reset;
+}
+
+datalist {
+	// provides an autocomplete for input
+	@extend %reset;
+
+	display: none;
+}
+
+details {
+	@extend %html5;
+	@extend %reset;
+	// TODO
+}
+
+summary {
+	// summary for details
+	@extend %reset;
+	@extend %article-element;
+
+	font-style: italic;
+}
+
+figure {
+	@extend %html5;
+	@extend %reset;
+	@extend %article-element;
+}
+
+figcaption {
+	@extend %html5;
+	@extend %reset;
+}
+
+canvas, map {
+	@extend %html5;
+	@extend %reset;
+	@extend %article-element;
+}
+
+div,
+object,
+iframe,
+embed {
+	@extend %reset;
+}
+
+hr {
+	@extend %reset;
+	@extend %article-element;
+
+	border-width: $size-border;
+	border-style: solid none none;
+	border-color: $color-border; //#ecf0f1;
+}
+
+h1 {
+	@extend %reset;
+	@extend %article-element;
+
+	margin-top: 6rem;
+	margin-bottom: 3rem;
+	font-weight: normal;
+	font-size: 2.5rem;
+	letter-spacing: -0.025rem;
+
+	main &:first-of-type {
+		margin-top: 0;
+	}
+}
+
+h2 {
+	@extend %reset;
+	@extend %article-element;
+
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	padding-top: 1.5rem;
+	padding-bottom: 0.5rem;
+	font-weight: bold;
+	font-size: 1.5rem;
+	border-color: $color-border;
+	border-width: $size-border;
+	border-style: none none solid none;
+	position: -webkit-sticky;
+	top: 0;
+}
+
+h3 {
+	@extend %reset;
+	@extend %article-element;
+
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+	font-size: 1.25rem;
+	font-weight: bold;
+
+	h2 + & {
+		margin-top: 1.5rem;
+	}
+}
+
+h4 {
+	@extend %reset;
+	@extend %article-element;
+
+	font-size: 1rem;
+	font-weight: bold;
+	margin-top: 1rem;
+	margin-bottom: 0;
+}
+
+h5 {
+	@extend %reset;
+	@extend %article-element;
+
+	font-size: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 0;
+}
+
+h6 {
+	@extend %reset;
+	@extend %article-element;
+
+	font-size: 0.8rem;
+	margin-top: 1rem;
+	margin-bottom: 0;
+}
+
+table {
+	@extend %reset;
+	@extend %article-element;
+
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+
+	/* Avoid border-on-border together with bordered H2 */
+	h2 + & tr:first-child th,
+	h2 + & tr:first-child td {
+		border-top-width: 0;
+	}
+}
+
+tbody,
+tfoot,
+thead,
+colgroup,
+col,
+caption {
+	@extend %reset;
+}
+
+td,
+th {
+	@extend %reset;
+	
+	text-align: left;
+	padding: 0.3rem 0;
+	border-style: solid;
+	border-color: $color-border;
+	border-width: $size-border 0;
+}
+
+ul {
+	@extend %reset;
+	@extend %article-element;
+
+	@include sub-list;
+
+	list-style-type: disc;
+}
+
+ol {
+	@extend %reset;
+	@extend %article-element;
+
+	@include sub-list;
+
+	list-style-type: decimal;
+}
+
+li {
+	@extend %reset;
+
+	margin-top: 0.25rem;
+	margin-bottom: 0.25rem;
+
+	margin-left: 1.5em;
+}
+
+dl {
+	@extend %reset;
+	@extend %article-element;
+}
+
+dd {
+	@extend %reset;
+}
+
+dt {
+	@extend %reset;
+}
+
+p {
+	@extend %reset;
+	@extend %article-element;
+}
+
+blockquote {
+	@extend %reset;
+	@extend %article-element;
+	@extend %quotes;
+
+	font-style: italic;
+}
+
+pre {
+	@extend %reset;
+	@extend %article-element;
+	@extend %formatted;
+}
+
+output {
+	@extend %reset;
+	@extend %article-element;
+	@extend %formatted;
+}
+
+form {
+	@extend %reset;
+	@extend %article-element;
+}
+
+fieldset {
+	@extend %reset;
+	@extend %article-element;
+}
+
+label {
+	@extend %reset;
+}
+
+legend {
+	@extend %reset;
+}
+
+button {
+	@extend %reset;
+}
+
+input {
+	@extend %reset;
+}
+
+keygen {
+	@extend %reset;
+}
+
+select {
+	@extend %reset;
+}
+
+optgroup, option {
+	@extend %reset;
+}
+
+address {
+	@extend %reset;
+	@extend %article-element;
+
+	font-style: italic;
+}
+
+audio, video {
+	@extend %reset;
+	@extend %article-element;
+}
+
+noscript {
+	@extend %reset;
+
+	font-weight: bold;
+}
+
+picture {
+	@extend %html5;
+	@extend %reset;
+}
+
+progress {
+	@extend %html5;
+	@extend %reset;
+}
+
+ruby {
+	@extend %reset;
+	@extend %article-element;
+}
+
+
+/**
+ * Inline elements
+ */
+
+span {
+	@extend %reset;
+	@extend %inline;
+}
+
+a {
+	@extend %reset;
+	@extend %inline;
+
+	color: $color-link;
+
+	&:link,
+	&:visited {
+		text-decoration: none;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+abbr {
+	// abbreviation
+	@extend %reset;
+	@extend %inline;
+}
+
+area {
+	// part of map
+	@extend %reset;
+	@extend %inline;
+}
+
+bdi, bdo {
+	// bi-directional isolation / override
+	@extend %reset;
+	@extend %inline;
+}
+
+cite {
+	// title
+	@extend %reset;
+	@extend %inline;
+
+	font-style: italic;
+}
+
+data {
+	// provides a machine-readable value of enclosed entity via value=""
+	@extend %reset;
+	@extend %inline;
+}
+
+del {
+	// deleted stuff
+	@extend %reset;
+	@extend %inline;
+
+	text-decoration: line-through;
+}
+
+ins {
+	// inserted
+	@extend %reset;
+	@extend %inline;
+
+	text-decoration: underline;
+}
+
+dfn {
+	// definition
+	@extend %reset;
+	@extend %inline;
+
+	font-style: italic;
+}
+
+em {
+	// emphasized
+	@extend %reset;
+	@extend %inline;
+
+	font-style: italic;
+}
+
+strong {
+	// important
+	@extend %reset;
+	@extend %inline;
+
+	font-weight: bold;
+}
+
+b {
+	// bold....
+	@extend %reset;
+	@extend %inline;
+
+	font-weight: bold;
+}
+
+u {
+	// misspelled words
+	@extend %reset;
+	@extend %inline;
+
+	text-decoration: line-through;
+}
+
+i {
+	// alternate voice or mood
+	@extend %reset;
+	@extend %inline;
+
+	font-style: italic;
+}
+
+img {
+	@extend %reset;
+}
+
+q {
+	// quotation
+	@extend %reset;
+	@extend %quotes;
+	@extend %inline;
+
+	font-style: italic;
+}
+
+s {
+	// incorrect text
+	@extend %reset;
+	@extend %inline;
+
+	text-decoration: line-through;
+}
+
+mark {
+	// higlighted
+	@extend %reset;
+	@extend %inline;
+	
+	background-color: $color-highlight;
+}
+
+meter {
+	// value="" out of min="" max=""
+	@extend %reset;
+	@extend %inline;
+}
+
+small {
+	// smaller text / subtitle
+	@extend %reset;
+	@extend %inline;
+
+	font-size: 0.7em;
+}
+
+sub {
+	// subscript
+	@extend %reset;
+	@extend %inline;
+
+	position: relative;
+	font-size: 0.5em;
+	line-height: 1;
+	bottom: -0.3em;
+	//vertical-align: sub;
+}
+
+sup {
+	// superscript
+	@extend %reset;
+	@extend %inline;
+
+	position: relative;
+	font-size: 0.5em;
+	line-height: 1;
+	top: -0.95em;
+	//vertical-align: super;
+}
+
+time {
+	// time
+	@extend %reset;
+	@extend %inline;
+
+	font-style: italic;
+}
+
+kbd {
+	// keyboard input
+	@extend %reset;
+	@extend %inline;
+	@extend %code;
+
+}
+
+samp {
+	// sample output
+	@extend %reset;
+	@extend %inline;
+	@extend %code;
+}
+
+var {
+	// var
+	@extend %reset;
+	@extend %inline;
+	@extend %code;
+}
+
+code {
+	// code
+	@extend %reset;
+	@extend %inline;
+	@extend %inline-bordered;
+	@extend %code;
+
+	pre & {
+		display: block;
+		padding: $size-spacing-vert $size-spacing-horz;
+	}
+}
+
+rt,
+rp {
+	// for asian languages
+	@extend %reset;
+	@extend %inline;
+}
+
+param {
+	// for object
+	display: none;
+}

@@ -1,0 +1,151 @@
+/**
+ *
+ */
+
+%reset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+%html5 {
+	display: block;
+}
+
+%nice-header {
+	&::before {
+		font-weight: 400;
+		font-size: 1.25rem;
+		text-align: right;
+		width: 2rem;
+		content: '#';
+		padding-right: .5rem;
+		margin-left: -2rem;
+		color: $color-accent;
+		display: inline-block;
+		-webkit-font-smoothing: antialiased;  
+	}
+}
+
+%quotes {
+	quotes: none;
+
+	&:before {
+		content: open-quote;
+	}
+
+	&:after {
+		content: close-quote;
+	}
+}
+
+%inline {
+	//display: inline-block;
+	border-color: transparent;
+	border-width: $size-border-inline-bordered;
+	border-style: solid;
+	//height: $size-text * $size-line;
+	outline-style: none;
+	outline-width: 0;
+	outline-offset: 0;
+	display: inline;
+	&:focus,
+	&:active,
+	&:hover {
+		outline-style: none;
+		outline-width: 0;
+		outline-offset: 0;
+	}
+	//line-height: $size-line;
+	//line-height: 0;
+	//position: relative;
+	//top: 0;
+	//:-webkit-any(code, span, a, abbr, area, bdi, bdo, cite, data, del, ins, dfn, em, strong, b, u, i, q, s, mark, button, meter, small, sub, sup, time, kbd, samp, var, rt, rp) & {
+	//margin: (-1 * $size-border-inline-bordered) 0;
+	//}
+	//:-moz-any(code, span, a, abbr, area, bdi, bdo, cite, data, del, ins, dfn, em, strong, b, u, i, q, s, mark, button, meter, small, sub, sup, time, kbd, samp, var, rt, rp) & {
+	//margin: (-1 * $size-border-inline-bordered) 0;
+	//}
+}
+
+%inline-bordered {
+	border-color: $color-border;
+	padding: 0 $size-spacing-horz;
+	//line-height: $size-line-inline-bordered;
+	//height: $size-text * $size-line;
+}
+
+%code {
+	//font-size: .875rem;
+	//padding-left: $size-spacing-horz;
+	//padding-right: $size-spacing-horz;
+	border-width: $size-border;
+	border-color: $color-border;
+	border-radius: $size-border;
+	background-color: $color-bg-code;
+	color: $color-text;
+}
+
+%article-element {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+%formatted {
+	display: block;
+	font-family: monospace;
+	white-space: pre;
+}
+
+@mixin sub-list {
+	ul, ol {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+/**
+ * Mixin for font face by jonathantneal.
+ *
+ * https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
+ */
+
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+	eot: "?",
+	svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+	otf: "opentype",
+	ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}

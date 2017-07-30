@@ -1,0 +1,16 @@
+$color-text: #4D5757;
+$color-link: #2980B9;
+$color-accent: #C1CACC;
+$color-accent2: #27AE60;
+$color-highlight: yellow;
+$color-border: #E1E7E8;
+$color-bg: #FFFFFF;
+$color-bg-code: #FAFAFA;
+
+$size-spacing-horz: 0.3em;
+$size-spacing-vert: 0.3em;
+$size-text: 16px;
+$size-line: 1.375;
+$size-border: 1px;
+$size-border-inline-bordered: $size-text / $size-text * 1px;
+$size-line-inline-bordered: $size-line - 2 * ($size-border-inline-bordered);

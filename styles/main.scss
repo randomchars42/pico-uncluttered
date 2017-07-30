@@ -1,0 +1,190 @@
+/**
+ * 
+ *
+ * Based on the great Bits & Pieces theme by Fredrik Danielsson, Lost&Keys (http://lostkeys.se)
+ * Licensed under MIT (https://github.com/lostkeys/Bits-and-Pieces-Theme-for-Pico/blob/master/LICENSE)
+ */
+
+@import 'elegant-skeleton/variables';
+
+$color-text: #4D5757;
+$color-link: #2980B9;
+$color-accent: #C1CACC;
+$color-border: #E1E7E8;
+$color-bg: #FFFFFF;
+$color-bg-code: #FAFAFA;
+
+$size-header: 3em;
+$size-footer: 3em;
+$size-mobile: 1200px;
+$size-nav-horz: 20em;
+
+@import 'elegant-skeleton/mixins';
+@import 'elegant-skeleton/reset_elegantly'; 
+ 
+@include font-face('source-sans-pro', '../fonts/SourceSansPro-Regular', 400, normal, eot woff ttf);
+@include font-face('source-sans-pro', '../fonts/SourceSansPro-It', 400, italic, eot woff ttf);
+@include font-face('source-sans-pro', '../fonts/SourceSansPro-Semibold', 700, normal, eot woff ttf);
+@include font-face('source-sans-pro', '../fonts/SourceSansPro-SemiboldIt', 700, italic, eot woff ttf);
+
+body {
+  font-family: "source-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 100vh;
+}
+
+header[role=banner] {
+  height: $size-header;
+}
+
+footer[role=content-info] {
+  height: $size-footer;
+}
+
+%full-height {
+	@media (min-width: $size-mobile) {
+		// subtract the header and footer from the viewport
+		height: calc(100vh - #{$size-header} - #{$size-footer});
+		overflow-y: auto;
+	}
+}
+
+main {
+	@extend %full-height;
+	padding: $size-spacing-vert $size-spacing-horz;
+
+	@media (min-width: $size-mobile) {
+  	margin-left: $size-nav-horz;
+		padding: 0 2em;
+
+		&:after {
+			content: '';
+			display: table;
+		}
+	}
+}
+
+nav {
+	@extend %full-height;
+	padding: $size-spacing-vert $size-spacing-horz;
+
+	@media (min-width: $size-mobile) {
+  	float: left;
+  	width: $size-nav-horz;
+	}
+}
+
+h2 {
+	@extend %nice-header;
+}
+
+h3 {
+	@extend %nice-header;
+}
+
+///* 
+// * Main navigation
+// */
+//
+//.main-nav {
+//  box-sizing: border-box;
+//  position: fixed;
+//  top: 0;
+//  left: 0;
+//  padding-left: var(--vertical-padding);
+//  overflow-x: hidden;
+//  overflow-y: scroll;
+//  width: var(--nav-width);
+//  height: 100vh;
+//}
+//
+//.main-nav::-webkit-scrollbar {
+//  display: none;
+//}
+//
+//.main-nav a {
+//  color: var(--text-color);
+//  font-size: 0.9rem;
+//  overflow: hidden;
+//  padding-top: 5px;
+//  padding-bottom: 0;
+//  text-overflow: ellipsis;
+//  white-space: nowrap;  
+//  display: flex;
+//}
+//
+//.main-nav a:hover {
+//  text-decoration: none;
+//}
+//
+//.main-nav a .shortcut {
+//  align-self: center;
+//  color: var(--color-concrete);
+//  display: inline-block;
+//  font-size: .6875rem;
+//  font-weight: normal;
+//  margin-left: auto;
+//  text-align: right;
+//}
+//
+//.main-nav nav {
+//  padding:  var(--document-horizontal-margin) 0;
+//}
+//
+//.main-nav nav ul {
+//  margin: 0;
+//  padding-left: 0;
+//  list-style: none;
+//}
+//
+//.main-nav nav li {
+//  margin-left: 0px;
+//}
+//
+//.main-nav nav > ul > li {
+//  padding-left: 0px;
+//}
+//
+//.main-nav nav li.active {
+//
+//}
+//
+//.main-nav nav li.active > a {
+//  font-weight: bold;
+//}
+//
+///* Main nav Tree (not implemented...yet */
+//
+//.main-nav nav li.directory > a::before {
+//  content: '▸ ';
+//}
+//
+//.main-nav nav li.directory a.folder-open::before {
+//  content: '▾ ';
+//}
+//
+//.main-nav nav li.directory > ul {
+//  margin-top: 0;
+//  margin-left: 20px;
+//  display: none;
+//  margin-bottom: 10px;
+//}
+//
+//.main-nav nav li.directory.open > ul {
+//  display: block;
+//}
+//
+///* same-page navigation (Not implemented...yet) */
+//
+//.page-nav:not(:empty) {
+//  padding-top: 5px;
+//}
+//
+//.page-nav a {
+//  padding-top: 0px;
+//  padding-bottom: 0px;
+//  font-size: 0.8em;
+//}
+//
+//.page-nav a:before {
+//  content: '# ';
+//}
