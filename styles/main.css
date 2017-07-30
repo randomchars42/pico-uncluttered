@@ -82,7 +82,7 @@ rp {
 
 code {
   border-color: #E1E7E8;
-  padding: 0 0.3em; }
+  padding: 0 0.3rem; }
 
 kbd, samp, var, code {
   border-width: 1px;
@@ -292,7 +292,7 @@ time {
 
 pre code {
   display: block;
-  padding: 0.3em 0.3em; }
+  padding: 0.3rem 0.3rem; }
 
 param {
   display: none; }
@@ -322,31 +322,42 @@ body {
   height: 100vh; }
 
 header[role=banner] {
-  height: 3em; }
+  height: 3rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  padding: 0 0.3rem;
+  color: #C1CACC; }
 
 footer[role=content-info] {
-  height: 3em; }
+  height: 3rem;
+  text-align: right;
+  height: 3rem;
+  font-size: 0.8rem;
+  line-height: 3rem;
+  padding: 0 0.3rem;
+  color: #C1CACC; }
 
 @media (min-width: 1200px) {
   main, nav {
-    height: calc(100vh - 3em - 3em);
+    height: calc(100vh - 3rem - 3rem);
     overflow-y: auto; } }
 
 main {
-  padding: 0.3em 0.3em; }
+  padding: 0.3rem 0.3rem; }
   @media (min-width: 1200px) {
     main {
-      margin-left: 20em;
+      margin-left: 20rem;
       padding: 0 2em; }
       main:after {
         content: '';
         display: table; } }
 
 nav {
-  padding: 0.3em 0.3em; }
+  padding: 0.3rem 0.3rem; }
   @media (min-width: 1200px) {
     nav {
       float: left;
-      width: 20em; } }
+      width: 20rem; } }
 
 /*# sourceMappingURL=main.css.map */
