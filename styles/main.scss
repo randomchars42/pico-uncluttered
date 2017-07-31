@@ -33,22 +33,27 @@ body {
 }
 
 header[role=banner] {
-  height: $size-header;
 	font-weight: bold;
 	font-size: 1.5rem;
-	line-height: 3rem;
 	padding: 0 $size-spacing-horz;
 	color: $color-accent;
+
+	@media (min-width: $size-mobile) {
+		line-height: $size-header;
+  	height: $size-header;
+	}
 }
 
 footer[role=content-info] {
-  height: $size-footer;
 	text-align: right;
-  height: $size-header;
 	font-size: 0.8rem;
-	line-height: 3rem;
 	padding: 0 $size-spacing-horz;
 	color: $color-accent;
+
+	@media (min-width: $size-mobile) {
+		line-height: $size-footer;
+  	height: $size-footer;
+	}
 }
 
 %full-height {
@@ -81,6 +86,12 @@ nav {
 	@media (min-width: $size-mobile) {
   	float: left;
   	width: $size-nav-horz;
+	}
+}
+
+h1 {
+	main &:first-of-type {
+		margin-top: 2rem;
 	}
 }
 
